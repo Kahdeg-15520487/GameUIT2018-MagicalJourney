@@ -109,6 +109,25 @@ public class ItemEquip : MonoBehaviour {
 
 		if (transform.parent.gameObject.name == "SpellContent") {
 
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "fireball") {
+				SpellName.text = PlayerPrefs.GetString ("Spell1Name");
+				ItemDes.text = PlayerPrefs.GetString ("Spell1Des");
+			}
+
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "firepit") {
+				SpellName.text = PlayerPrefs.GetString ("Spell2Name");
+				ItemDes.text = PlayerPrefs.GetString ("Spell2Des");
+			}
+
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "summon_rock") {
+				SpellName.text = PlayerPrefs.GetString ("Spell3Name");
+				ItemDes.text = PlayerPrefs.GetString ("Spell3Des");
+			}
+
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "magic_missle") {
+				SpellName.text = PlayerPrefs.GetString ("Spell4Name");
+				ItemDes.text = PlayerPrefs.GetString ("Spell4Des");
+			}
 			Sprite itemSprite = transform.GetChild (0).GetComponentInChildren<Image> ().sprite;
 			itemImage.sprite = itemSprite;
 		}

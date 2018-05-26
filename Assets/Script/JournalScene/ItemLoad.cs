@@ -33,7 +33,14 @@ public class ItemLoad : MonoBehaviour {
 	public Sprite Custard;
 	public Sprite Chocolate;
 	public Sprite Curse;
-	// Use this for initialization
+
+	//spell
+	public Sprite Fireball;
+	public Sprite Firepit;
+	public Sprite SummonRock;
+	public Sprite MagicMissle;
+
+
 	void Start () {
 
 		//load cac item
@@ -151,13 +158,22 @@ public class ItemLoad : MonoBehaviour {
 
 		//load cac spell
 		if (this.gameObject.name == "SpellContent") {
-			if (PlayerPrefs.GetInt ("Spell1Bool") == 1) {
-				//Instantiate (Items, this.gameObject.transform).GetComponentInChildren<Text>().text = PlayerPrefs.GetString ("Spell1Des");
-				Transform newSpell = Instantiate (Items, this.gameObject.transform);
-				if (PlayerPrefs.GetString ("Spell1Image") == "Gear") {
-					//newSpell.GetChild (0).GetComponent<Image> ().sprite = Gear;
-				}
-			}
+			//load 4 spell
+			Transform newSpell1 = Instantiate (Items, this.gameObject.transform);
+			newSpell1.GetChild (0).GetComponent<Image> ().sprite = Fireball;
+			newSpell1.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("Spell1Name");
+
+			Transform newSpell2 = Instantiate (Items, this.gameObject.transform);
+			newSpell2.GetChild (0).GetComponent<Image> ().sprite = Firepit;
+			newSpell2.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("Spell2Name");
+
+			Transform newSpell3 = Instantiate (Items, this.gameObject.transform);
+			newSpell3.GetChild (0).GetComponent<Image> ().sprite = SummonRock;
+			newSpell3.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("Spell3Name");
+
+			Transform newSpell4 = Instantiate (Items, this.gameObject.transform);
+			newSpell4.GetChild (0).GetComponent<Image> ().sprite = MagicMissle;
+			newSpell4.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("Spell4Name");
 		}
 
 	}

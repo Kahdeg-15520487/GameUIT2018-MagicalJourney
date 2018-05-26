@@ -6,6 +6,8 @@ public class CreateDatabase : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		//database cho equipment va item
 		PlayerPrefs.SetInt ("GuildBool", 1);
 		PlayerPrefs.SetInt ("DenverBool", 1);
 		PlayerPrefs.SetInt ("NecroticBool", 1);
@@ -50,6 +52,7 @@ public class CreateDatabase : MonoBehaviour {
 		PlayerPrefs.SetString ("ChocolateName", "Chocolate Mint");
 		PlayerPrefs.SetString ("CurseName", "Curse Seal");
 
+		//database cho keyitem
 		PlayerPrefs.SetString ("GuildDes", "Guild Amulet Description");
 		PlayerPrefs.SetString ("DenverDes", "Denver Seal Description");
 		PlayerPrefs.SetString ("NecroticDes", "Necrotic Seal Description");
@@ -71,6 +74,18 @@ public class CreateDatabase : MonoBehaviour {
 		PlayerPrefs.SetString ("CustardDes", "Custard Pie Description");
 		PlayerPrefs.SetString ("ChocolateDes", "Chocolate Mint Description");
 		PlayerPrefs.SetString ("CurseDes", "Curse Seal Description");
+
+
+		//database cho spell
+		PlayerPrefs.SetString ("Spell1Name", "Fire Ball");
+		PlayerPrefs.SetString ("Spell2Name", "Fire Pit");
+		PlayerPrefs.SetString ("Spell3Name", "Summon Rock");
+		PlayerPrefs.SetString ("Spell4Name", "Magic Missle");
+
+		PlayerPrefs.SetString ("Spell1Des", "Fire Ball throws a fire ball toward your enemy");
+		PlayerPrefs.SetString ("Spell2Des", "Firepit spit fire toward your enemy");
+		PlayerPrefs.SetString ("Spell3Des", "Summon a rock infront of you");
+		PlayerPrefs.SetString ("Spell4Des", "Hurl a magical missle at your foes");
 	}
 	
 	// Update is called once per frame
