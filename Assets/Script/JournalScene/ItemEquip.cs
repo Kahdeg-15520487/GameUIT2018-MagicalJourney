@@ -33,8 +33,7 @@ public class ItemEquip : MonoBehaviour {
 	public void OnItemClick()
 	{
 		//khi nhan vao mot item thi cap nhat noi dung item description truoc, sau do
-		ItemDes.text = this.gameObject.GetComponentInChildren<Text> ().text;
-
+		Debug.Log(this.gameObject.name);
 		//tuy vao loai item ma lam them cac hanh dong can thiet
 		//neu vat pham duoc click la mot item
 		if (transform.parent.gameObject.name == "ItemContent") {
