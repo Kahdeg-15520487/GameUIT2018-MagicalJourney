@@ -10,11 +10,13 @@ public class overworld_behavior : MonoBehaviour {
     }
     public void GoToBattle()
     {
-        SceneManager.LoadScene("BattleScene");
+        LoaderBehaviour.SceneName = "BattleScene";
+        SceneManager.LoadScene("LoadScreen");
     }
     public void GoToShop()
     {
-        SceneManager.LoadScene("JournalScene");
+        LoaderBehaviour.SceneName = "JournalScene";
+        SceneManager.LoadScene("LoadScreen");
     }
     // Use this for initialization
     void Start () {
