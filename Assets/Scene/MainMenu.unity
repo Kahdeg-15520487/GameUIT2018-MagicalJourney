@@ -2406,7 +2406,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1405286791}
-  - component: {fileID: 1405286790}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2414,17 +2413,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1405286790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1405286789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ecc54ea332f6c440960f68f7f4a0d95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1405286791
 Transform:
   m_ObjectHideFlags: 0
@@ -2907,6 +2895,7 @@ GameObject:
   - component: {fileID: 1708424053}
   - component: {fileID: 1708424052}
   - component: {fileID: 1708424051}
+  - component: {fileID: 1708424054}
   m_Layer: 5
   m_Name: NewGameBtn
   m_TagString: Untagged
@@ -2972,7 +2961,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405286790}
+      - m_Target: {fileID: 1708424054}
         m_MethodName: GotoBatleScreen
         m_Mode: 1
         m_Arguments:
@@ -3018,6 +3007,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1708424049}
+--- !u!114 &1708424054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708424049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689caa27cfc1c334db3fdd1c564af057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1792071653
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public enum Direction
 
 public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
 {
+    public Element Element { get; set; }
+    public Element GetElement() { return Element; }
 
     private float health = 50;
     public float Health { get { return health; } }
@@ -85,9 +87,12 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
 
     public void Start()
     {
+        Element = Element.Neutral;
+
         SpellBook = new Dictionary<string, SpellCard>();
         SpellBook.Add("MagicMissile", new MagicMissileSpell(10));
         SpellBook.Add("FirePit", new FirePitSpell(1));
+        SpellBook.Add("FireBall", new FireBallSpell(15));
         EquippedSpell = "MagicMissile";
 
         Dead += (o, e) => this.Destroy();
@@ -120,6 +125,11 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
             EquippedSpell = "FirePit";
         }
 
+        if (Input.GetKeyUp(KeyCode.Alpha3))
+        {
+            EquippedSpell = "FireBall";
+        }
+
         GetInput();
 
         movementCooldown += Time.deltaTime;
@@ -147,10 +157,10 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
                 movementCooldown = 0;
             }
 
-            //if (HelperFunction.IsKeyPress(Keys.Space))
-            //{
-            //    SpellBook[EquippedSpell].Cast(this, Pad, Coordinate);
-            //}
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                SpellBook[EquippedSpell].Cast(this, Pad, Coordinate);
+            }
         }
     }
 

@@ -5,7 +5,11 @@ using UnityEngine;
 
 public enum Element
 {
-    Neutral, Fire, Water, Ground, Green, Electric, Wind, Shadow
+    Neutral,
+    Fire, Water,
+    Ground, Green,
+    Electric,
+    Wind, Shadow
 }
 
 public abstract class SpellCard
@@ -14,7 +18,7 @@ public abstract class SpellCard
     public Element Element;
     public float Cooldown;
     protected float BaseDamage;
-    public virtual float GetDamage()
+    public virtual float GetDamage(Element other)
     {
         return BaseDamage;
     }

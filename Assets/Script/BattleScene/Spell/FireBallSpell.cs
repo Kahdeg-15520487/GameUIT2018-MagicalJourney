@@ -1,20 +1,25 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 
-class MagicMissileSpell : SpellCard
+public class FireBallSpell : SpellCard
 {
-    public MagicMissileSpell(float baseDamage)
+
+    public FireBallSpell(float baseDamage)
     {
         BaseDamage = baseDamage;
-        ManaCost = 5;
+        Element = Element.Fire;
+        ManaCost = 10;
+    }
+
+    public override float GetDamage(Element other)
+    {
+        return DamageCalculator.CalculateDamage(BaseDamage, Element, other);
     }
 
     public override bool Cast(ISpellCaster caster, Pad pad, Vector2Int coordinate)
     {
-        //check for mana cost, cooldown stuff
-        //not enough -> return false;
+        //check mana cost
 
         if (caster.GetMana() < ManaCost)
         {
@@ -22,7 +27,7 @@ class MagicMissileSpell : SpellCard
         }
 
         var target = GetCastRange(coordinate)[0];
-        pad.SpawnProjectile(new BasicProjectile(target, Act));
+        pad.SpawnProjectile(new FireBallProjectile(target, Act));
         return true;
     }
 
@@ -40,6 +45,6 @@ class MagicMissileSpell : SpellCard
             return;
         }
 
-        var result = obj.ReceiveDamage(GetDamage());
+        var result = obj.ReceiveDamage(GetDamage(obj.GetElement()));
     }
 }

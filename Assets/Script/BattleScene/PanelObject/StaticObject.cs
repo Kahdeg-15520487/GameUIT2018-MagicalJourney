@@ -3,11 +3,15 @@ using UnityEngine;
 
 class StaticObject : MonoBehaviour, IPanelObject, IDamagable
 {
-    private float health = 50;
+    public Element Element;
+    public Element GetElement() { return Element; }
+
+    private float health = 500;
     public float Health { get { return health; } }
     public float GetHealth() { return health; }
     public float ReceiveDamage(float damage)
     {
+        Debug.Log("receive " + damage + " damage, " + health + " hp left");
         health -= damage;
         if (health <= 0)
         {

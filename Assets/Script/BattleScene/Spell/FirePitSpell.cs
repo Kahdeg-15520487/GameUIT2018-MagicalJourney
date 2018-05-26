@@ -19,7 +19,7 @@ class FirePitSpell : SpellCard
             return false;
         }
         var target = GetCastRange(coordinate)[0];
-        pad.SpawnPanelEffect(target, new BurnPanelEffect(GetDamage()));
+        pad.SpawnPanelEffect(target, new BurnPanelEffect(BaseDamage));
         return true;
     }
 

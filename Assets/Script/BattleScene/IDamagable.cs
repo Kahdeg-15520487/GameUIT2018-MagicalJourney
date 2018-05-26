@@ -2,6 +2,7 @@
 
 internal interface IDamagable
 {
+    Element GetElement();
     float GetHealth();
     float ReceiveDamage(float v);
 
