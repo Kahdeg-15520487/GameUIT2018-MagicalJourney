@@ -113,6 +113,46 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &33416071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 33416073}
+  - component: {fileID: 33416072}
+  m_Layer: 0
+  m_Name: CreateDatabase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &33416072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 33416071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed08d9dea5d08444aa6fc1c6099b477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &33416073
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 33416071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 692.376, y: 366.30362, z: -1.9486796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &485454327
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,15 +294,99 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2038988791
+--- !u!1 &758832584 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1831221790554858, guid: c2e13651326811a459be4046cccc42f4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2110815982}
+--- !u!114 &758832589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758832584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21ce18c0e1daae43998810406e15f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1189278849 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1771490490355996, guid: c2e13651326811a459be4046cccc42f4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2110815982}
+--- !u!114 &1189278854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1189278849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21ce18c0e1daae43998810406e15f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1750561725 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1659494327737920, guid: c2e13651326811a459be4046cccc42f4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2110815982}
+--- !u!114 &1750561730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1750561725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21ce18c0e1daae43998810406e15f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1760571436 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1907132902670690, guid: c2e13651326811a459be4046cccc42f4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2110815982}
+--- !u!114 &1760571441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1760571436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21ce18c0e1daae43998810406e15f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &2110815982
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114200722983951788, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808342737820918, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114598627383689284, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114959007347073360, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 224368854849460884, guid: c2e13651326811a459be4046cccc42f4,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -301,7 +425,7 @@ Prefab:
     - target: {fileID: 224368854849460884, guid: c2e13651326811a459be4046cccc42f4,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224368854849460884, guid: c2e13651326811a459be4046cccc42f4,
         type: 2}
@@ -353,6 +477,500 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114200722983951788, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200722983951788, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200722983951788, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 758832589}
+    - target: {fileID: 114200722983951788, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: JournalNameOnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200722983951788, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808342737820918, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808342737820918, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808342737820918, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1760571441}
+    - target: {fileID: 114808342737820918, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: JournalNameOnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808342737820918, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114598627383689284, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114598627383689284, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114598627383689284, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1189278854}
+    - target: {fileID: 114598627383689284, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: JournalNameOnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114598627383689284, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114959007347073360, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114959007347073360, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114959007347073360, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114959007347073360, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1750561730}
+    - target: {fileID: 114959007347073360, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: JournalNameOnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114959007347073360, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 224276915852951174, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Gear
+      value: 
+      objectReference: {fileID: 21300000, guid: 230b7c93fa036914cbcbb36e90afb0c2,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: GuildAmulet
+      value: 
+      objectReference: {fileID: 21300000, guid: 74f14f22125f50e469724bb3a96178ac,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: DenverSeal
+      value: 
+      objectReference: {fileID: 21300000, guid: 387000923aceca948a067a09ae01e7cf,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: NecroticSeal
+      value: 
+      objectReference: {fileID: 21300000, guid: 9791e40a82f6c534593ca21de5bfb1ec,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: TeaBag
+      value: 
+      objectReference: {fileID: 21300000, guid: 79ac2441b67ec3947ba6314b3da7fd22,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: WitchSeal
+      value: 
+      objectReference: {fileID: 21300000, guid: aad33c72ea1e1c94ba1cf4c884b88c38,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: SecretKey
+      value: 
+      objectReference: {fileID: 21300000, guid: 1923c52e801aedb4c895e58dabd8b6a4,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: LoreScroll1
+      value: 
+      objectReference: {fileID: 21300000, guid: 4578bf67ee0d5e34ab38405a4e719fa2,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: LoreScroll2
+      value: 
+      objectReference: {fileID: 21300000, guid: c4a83c747539ed446af9a9f5c86fa0d5,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: ScrapNote
+      value: 
+      objectReference: {fileID: 21300000, guid: 703d9e1a9b796304a9b615fd8150bac7,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Sapphire
+      value: 
+      objectReference: {fileID: 21300000, guid: 8cb95cc8fd80e3d4999895b5d26ac122,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Ruby
+      value: 
+      objectReference: {fileID: 21300000, guid: ae5f2bf4ee7f6d24ea876326990759d1,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Aether
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ec51c25e1035414aa177624a3ec0f7c,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Zephyr
+      value: 
+      objectReference: {fileID: 21300000, guid: aac55bb00976d2e4cbf7a419e9c73f76,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Hermes
+      value: 
+      objectReference: {fileID: 21300000, guid: 53b629f8acbf39046b9223e5d40d2168,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Rainbow
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f54c8db68c8b1f4ea133bc09c6e6f34,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Antique
+      value: 
+      objectReference: {fileID: 21300000, guid: 743072d127312d34c8aa0e9e1931242d,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Herbal
+      value: 
+      objectReference: {fileID: 21300000, guid: f3479f4f764c2414eb32d85087dbb5eb,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Milk
+      value: 
+      objectReference: {fileID: 21300000, guid: 88cfd9ae72f34844d9e8af74b3d3a362,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Custard
+      value: 
+      objectReference: {fileID: 21300000, guid: afada873bf490134c93fb739e9c11c8f,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Chocolate
+      value: 
+      objectReference: {fileID: 21300000, guid: 193b2cddef80a124b81ac391855555fd,
+        type: 3}
+    - target: {fileID: 114142210013925326, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Curse
+      value: 
+      objectReference: {fileID: 21300000, guid: 2236ccc7b67dcd1449998bc75a7ea4b5,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Aether
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ec51c25e1035414aa177624a3ec0f7c,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Antique
+      value: 
+      objectReference: {fileID: 21300000, guid: 743072d127312d34c8aa0e9e1931242d,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Chocolate
+      value: 
+      objectReference: {fileID: 21300000, guid: 193b2cddef80a124b81ac391855555fd,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Curse
+      value: 
+      objectReference: {fileID: 21300000, guid: 2236ccc7b67dcd1449998bc75a7ea4b5,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Herbal
+      value: 
+      objectReference: {fileID: 21300000, guid: f3479f4f764c2414eb32d85087dbb5eb,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Hermes
+      value: 
+      objectReference: {fileID: 21300000, guid: 53b629f8acbf39046b9223e5d40d2168,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Milk
+      value: 
+      objectReference: {fileID: 21300000, guid: 88cfd9ae72f34844d9e8af74b3d3a362,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Custard
+      value: 
+      objectReference: {fileID: 21300000, guid: afada873bf490134c93fb739e9c11c8f,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Rainbow
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f54c8db68c8b1f4ea133bc09c6e6f34,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Zephyr
+      value: 
+      objectReference: {fileID: 21300000, guid: aac55bb00976d2e4cbf7a419e9c73f76,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Aether
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ec51c25e1035414aa177624a3ec0f7c,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Antique
+      value: 
+      objectReference: {fileID: 21300000, guid: 743072d127312d34c8aa0e9e1931242d,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Chocolate
+      value: 
+      objectReference: {fileID: 21300000, guid: 193b2cddef80a124b81ac391855555fd,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Curse
+      value: 
+      objectReference: {fileID: 21300000, guid: 2236ccc7b67dcd1449998bc75a7ea4b5,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Custard
+      value: 
+      objectReference: {fileID: 21300000, guid: afada873bf490134c93fb739e9c11c8f,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Herbal
+      value: 
+      objectReference: {fileID: 21300000, guid: f3479f4f764c2414eb32d85087dbb5eb,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Hermes
+      value: 
+      objectReference: {fileID: 21300000, guid: 53b629f8acbf39046b9223e5d40d2168,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Rainbow
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f54c8db68c8b1f4ea133bc09c6e6f34,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Ruby
+      value: 
+      objectReference: {fileID: 21300000, guid: ae5f2bf4ee7f6d24ea876326990759d1,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Sapphire
+      value: 
+      objectReference: {fileID: 21300000, guid: 8cb95cc8fd80e3d4999895b5d26ac122,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Zephyr
+      value: 
+      objectReference: {fileID: 21300000, guid: aac55bb00976d2e4cbf7a419e9c73f76,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Milk
+      value: 
+      objectReference: {fileID: 21300000, guid: 88cfd9ae72f34844d9e8af74b3d3a362,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: DenverSeal
+      value: 
+      objectReference: {fileID: 21300000, guid: 387000923aceca948a067a09ae01e7cf,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: GuildAmulet
+      value: 
+      objectReference: {fileID: 21300000, guid: 74f14f22125f50e469724bb3a96178ac,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: NecroticSeal
+      value: 
+      objectReference: {fileID: 21300000, guid: 9791e40a82f6c534593ca21de5bfb1ec,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: TeaBag
+      value: 
+      objectReference: {fileID: 21300000, guid: 79ac2441b67ec3947ba6314b3da7fd22,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: WitchSeal
+      value: 
+      objectReference: {fileID: 21300000, guid: aad33c72ea1e1c94ba1cf4c884b88c38,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: SecretKey
+      value: 
+      objectReference: {fileID: 21300000, guid: 1923c52e801aedb4c895e58dabd8b6a4,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: LoreScroll1
+      value: 
+      objectReference: {fileID: 21300000, guid: 4578bf67ee0d5e34ab38405a4e719fa2,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: LoreScroll2
+      value: 
+      objectReference: {fileID: 21300000, guid: c4a83c747539ed446af9a9f5c86fa0d5,
+        type: 3}
+    - target: {fileID: 114240856432590844, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: ScrapNote
+      value: 
+      objectReference: {fileID: 21300000, guid: 703d9e1a9b796304a9b615fd8150bac7,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: DenverSeal
+      value: 
+      objectReference: {fileID: 21300000, guid: 387000923aceca948a067a09ae01e7cf,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: GuildAmulet
+      value: 
+      objectReference: {fileID: 21300000, guid: 74f14f22125f50e469724bb3a96178ac,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: LoreScroll1
+      value: 
+      objectReference: {fileID: 21300000, guid: 4578bf67ee0d5e34ab38405a4e719fa2,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: LoreScroll2
+      value: 
+      objectReference: {fileID: 21300000, guid: c4a83c747539ed446af9a9f5c86fa0d5,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: ScrapNote
+      value: 
+      objectReference: {fileID: 21300000, guid: 703d9e1a9b796304a9b615fd8150bac7,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: SecretKey
+      value: 
+      objectReference: {fileID: 21300000, guid: 1923c52e801aedb4c895e58dabd8b6a4,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: WitchSeal
+      value: 
+      objectReference: {fileID: 21300000, guid: aad33c72ea1e1c94ba1cf4c884b88c38,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: TeaBag
+      value: 
+      objectReference: {fileID: 21300000, guid: 79ac2441b67ec3947ba6314b3da7fd22,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: NecroticSeal
+      value: 
+      objectReference: {fileID: 21300000, guid: 9791e40a82f6c534593ca21de5bfb1ec,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Ruby
+      value: 
+      objectReference: {fileID: 21300000, guid: ae5f2bf4ee7f6d24ea876326990759d1,
+        type: 3}
+    - target: {fileID: 114765143541067838, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: Sapphire
+      value: 
+      objectReference: {fileID: 21300000, guid: 8cb95cc8fd80e3d4999895b5d26ac122,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2e13651326811a459be4046cccc42f4, type: 2}
   m_IsPrefabParent: 0
