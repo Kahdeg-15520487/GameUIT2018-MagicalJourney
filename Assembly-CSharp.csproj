@@ -106,20 +106,15 @@
      <Compile Include="Assets\Script\BattleScene\Row.cs" />
      <Compile Include="Assets\Script\BattleScene\SpellCard.cs" />
      <Compile Include="Assets\Script\BattleScene\StaticObject.cs" />
-     <None Include="Assets\Scene\this_is_scene.txt" />
-     <None Include="Assets\Script\BattleScene\this_is_battle_scene.txt" />
+     <Compile Include="Assets\Script\IntroScene\TapSkip.cs" />
      <None Include="Assets\Script\this_is_script.txt" />
      <None Include="Assets\Mouse Gesture Interpretation\SceneExemple\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-     <None Include="Assets\Mouse Gesture Interpretation\README.txt" />
      <None Include="Assets\SFX\this_is_sfx.txt" />
-     <None Include="Assets\Sprite\this_is_sprite.txt" />
-     <None Include="Assets\Mouse Gesture Interpretation\SceneExemple\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-     <Compile Include="Assets\Script\IntroScene\TapSkip.cs" />
      <None Include="Assets\Scene\this_is_scene.txt" />
-     <None Include="Assets\Script\BattleScene\this_is_battle_scene.txt" />
-     <None Include="Assets\Script\this_is_script.txt" />
-     <None Include="Assets\SFX\this_is_sfx.txt" />
      <None Include="Assets\Sprite\this_is_sprite.txt" />
+     <None Include="Assets\Mouse Gesture Interpretation\README.txt" />
+     <None Include="Assets\Mouse Gesture Interpretation\SceneExemple\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Script\BattleScene\this_is_battle_scene.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -147,6 +142,12 @@
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
+ <Reference Include="Gesture-Player">
+ <HintPath>E:/Workspace/unity/GameUIT2018-MagicalJourney/Assets/Mouse Gesture Interpretation/Scripts/Gesture-Player.dll</HintPath>
+ </Reference>
+ <Reference Include="Gesture">
+ <HintPath>E:/Workspace/unity/GameUIT2018-MagicalJourney/Assets/Mouse Gesture Interpretation/Scripts/Gesture.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
@@ -158,12 +159,6 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="Gesture-Player">
- <HintPath>E:/Workspace/unity/GameUIT2018-MagicalJourney/Assets/Mouse Gesture Interpretation/Scripts/Gesture-Player.dll</HintPath>
- </Reference>
- <Reference Include="Gesture">
- <HintPath>E:/Workspace/unity/GameUIT2018-MagicalJourney/Assets/Mouse Gesture Interpretation/Scripts/Gesture.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
