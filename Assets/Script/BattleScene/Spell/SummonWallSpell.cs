@@ -2,7 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SummonWallSpell : SpellCard {
+public class SummonWallSpell : SpellCard
+{
+    public SummonWallSpell()
+    {
+        Cooldown = 0;
+        BaseCooldown = 10;
+        ManaCost = 18;
+    }
+
     public override bool Cast(ISpellCaster caster, Pad pad, Vector2Int coordinate, bool flip = false)
     {
         if (CheckCast(caster))

@@ -83,7 +83,7 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
     public Element Element { get; set; }
     public Element GetElement() { return Element; }
 
-    private float health = 500;
+    private float health = 100;
     public float Health { get { return health; } set { health = value; } }
     public float GetHealth() { return health; }
     public float ReceiveDamage(float damage)
@@ -161,14 +161,16 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
     public Dictionary<string, SpellCard> SpellBook;
     public string EquippedSpell;
 
+    public bool IsDOT { get; set; }
+
     public void Start()
     {
         Element = Element.Neutral;
 
         SpellBook = new Dictionary<string, SpellCard>();
-        SpellBook.Add("MagicMissile", new MagicMissileSpell(7));
-        SpellBook.Add("FirePit", new FirePitSpell(1));
-        SpellBook.Add("FireBall", new FireBallSpell(150));
+        SpellBook.Add("MagicMissile", new MagicMissileSpell(15));
+        SpellBook.Add("FirePit", new FirePitSpell(5));
+        SpellBook.Add("FireBall", new FireBallSpell(25));
         SpellBook.Add("SummonWall", new SummonWallSpell());
         EquippedSpell = "MagicMissile";
         CastButton.sprite = SpellcardsSprite[0];
@@ -238,6 +240,11 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
         timer += Time.deltaTime;
         if (timer > 1)
         {
+            if (IsDOT)
+            {
+                ReceiveDamage(5);
+            }
+
             if (sp < 100)
             {
                 if (stopSP)
@@ -281,7 +288,7 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
         }
 
         StarPointBar.SetPercentage(sp / 100, sp.ToString());
-        HPBar.SetPercentage(health / 500, health + "/" + 500);
+        HPBar.SetPercentage(health / 100, health + "/" + 100 + (IsDOT ? " -5HP/s" : ""));
         MPBar.SetPercentage(mana / 20, mana + "/" + 20);
     }
 

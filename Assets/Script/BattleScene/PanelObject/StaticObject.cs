@@ -12,18 +12,18 @@ class StaticObject : MonoBehaviour, IPanelObject, IDamagable
     public Element Element;
     public Element GetElement() { return Element; }
 
-    private float health = 500;
+    private float health = 30;
     public float Health { get { return health; } }
     public float GetHealth() { return health; }
     public float ReceiveDamage(float damage)
     {
         Debug.Log("receive " + damage + " damage, " + health + " hp left");
         health -= damage;
-        if (health > 400)
+        if (health > 20)
         {
             currentSprite = 0;
         }
-        else if (health > 200 && health < 400)
+        else if (health > 10 && health < 20)
         {
             currentSprite = 1;
         }

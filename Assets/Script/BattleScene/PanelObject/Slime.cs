@@ -87,7 +87,8 @@ public class Slime : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
         Pad.RemoveObjectFromPanel(this.Panel);
         currentSprite = 2;
         spriteTimer = -1000;
-        SpriteRenderer.sprite = Sprites[currentSprite];
+        //SpriteRenderer.sprite = Sprites[currentSprite];
+        SpriteRenderer.enabled = false;
     }
     #endregion
 

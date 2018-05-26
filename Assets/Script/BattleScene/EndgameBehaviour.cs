@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndgameBehaviour : MonoBehaviour
 {
-
+    public UnityEngine.UI.Text EndgameText;
     public UnityEngine.UI.Image DimScreen;
     public Player Player;
     public GameObject Pad;
@@ -22,6 +22,7 @@ public class EndgameBehaviour : MonoBehaviour
     public void StartTheEnd()
     {
         isEnding = true;
+        EndgameText.gameObject.SetActive(true);
         DimScreen.enabled = true;
         Player.gameObject.GetComponent<Player>().enabled = false;
         Pad.GetComponent<Pad>().enabled = false;
@@ -41,6 +42,12 @@ public class EndgameBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Player.Health<=0)
+        {
+            StartTheEnd();
+            EndgameText.text = "You lose!";
+        }
+
         if (isEnding)
         {
             timer += Time.deltaTime;

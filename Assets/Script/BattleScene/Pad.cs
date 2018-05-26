@@ -93,7 +93,7 @@ public class Pad : MonoBehaviour
 
         if (panel.PanelObject.GetType() == typeof(Slime))
         {
-            Player.ReceiveDamage(10);
+            Player.IsDOT = true;
         }
 
         panel.PanelObject = null;

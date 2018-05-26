@@ -39,7 +39,7 @@ public abstract class SpellCard
     {
         if (Cooldown > BaseCooldown)
         {
-            if (caster.GetMana() > ManaCost)
+            if (caster.GetMana() >= ManaCost)
             {
                 Cooldown = 0;
                 caster.SetMana(ManaCost);
