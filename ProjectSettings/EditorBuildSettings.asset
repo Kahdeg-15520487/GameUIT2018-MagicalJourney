@@ -7,7 +7,10 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scene/IntroScene.unity
-    guid: ec1d21adcfd853d4595a4daff2c6d011
+    guid: 0acf7568469fe67479c548b7fb881b75
   - enabled: 1
-    path: Assets/Scene/tt.unity
-    guid: 0b94ea7eb524deb41a6a577c7ee44292
+    path: Assets/Scene/MainMenu.unity
+    guid: 8500a4fa4d63cbe47b2ae029cfea6f6e
+  - enabled: 1
+    path: Assets/Scene/BattleScene.unity
+    guid: ab50daaddec5ae24586d6fc50d167b66
