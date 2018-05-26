@@ -42,6 +42,10 @@ public abstract class Projectile
     public abstract void UndoEffect(Panel panel);
 
     /// <summary>
+    /// flip the direction of the travel;
+    /// </summary>
+    public bool Flip;
+    /// <summary>
     /// get the next panel
     /// </summary>
     public abstract Vector2Int NextPanel();

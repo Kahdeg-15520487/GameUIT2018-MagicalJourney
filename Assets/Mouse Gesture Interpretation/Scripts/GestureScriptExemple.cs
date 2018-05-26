@@ -52,7 +52,7 @@ public class GestureScriptExemple : MonoBehaviour
             return;
         }
         player.GetComponent<GesturePlayer.PlayerInput>().setTextureG(text);
-        player.GetComponent<GesturePlayer.PlayerInput>().setCorrectRate(0.8f);
+        player.GetComponent<GesturePlayer.PlayerInput>().setCorrectRate(0.5f);
     }
 
     //This method happen when the player look to the object and can be used for a variety of things, in this exemple we use to display the Pattern
@@ -73,13 +73,13 @@ public class GestureScriptExemple : MonoBehaviour
     //This method happen when the player succefully do the gesture
     void onGestureCorrect()
     {
-        //this.gameObject.GetComponent<Renderer>().material.color = Color.green;
+        this.gameObject.GetComponent<Renderer>().material.color = Color.green;
     }
 
     //This method happen when the player failed in the gesture
     void onGestureWrong()
     {
-        //this.gameObject.GetComponent<Renderer>().material.color = Color.red;
+        this.gameObject.GetComponent<Renderer>().material.color = Color.red;
     }
 
 

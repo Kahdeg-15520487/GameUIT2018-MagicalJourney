@@ -6,7 +6,7 @@ using UnityEngine;
 public class BasicProjectile : Projectile
 {
     Action<Panel> Callback;
-    public BasicProjectile(Vector2Int coord, Action<Panel> callback = null)
+    public BasicProjectile(Vector2Int coord, Action<Panel> callback = null,bool flip = false)
     {
         Coordinate = coord;
         Duration = 0;
@@ -15,6 +15,7 @@ public class BasicProjectile : Projectile
         BasePanelDuration = 0.1f;
 
         Callback = callback;
+        Flip = flip;
     }
 
     public override void DoEffect(Panel panel)
@@ -41,6 +42,13 @@ public class BasicProjectile : Projectile
 
     public override Vector2Int NextPanel()
     {
-        return Coordinate += new Vector2Int(1, 0);
+        if (!Flip)
+        {
+            return Coordinate += new Vector2Int(1, 0);
+        }
+        else
+        {
+            return Coordinate -= new Vector2Int(1, 0);
+        }
     }
 }

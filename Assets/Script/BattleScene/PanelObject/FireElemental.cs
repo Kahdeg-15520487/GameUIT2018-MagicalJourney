@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class FireElemental : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
 {
+    Player Player;
+    System.Random random;
 
     public Element Element { get; set; }
     public Element GetElement() { return Element; }
@@ -15,6 +17,7 @@ public class FireElemental : MonoBehaviour, IPanelObject, ISpellCaster, IDamagab
     public float ReceiveDamage(float damage)
     {
         health -= damage;
+        Debug.Log("receive " + damage + " damage, " + health + " hp left");
         if (health <= 0)
         {
             if (Dead != null)
@@ -70,6 +73,7 @@ public class FireElemental : MonoBehaviour, IPanelObject, ISpellCaster, IDamagab
     public void Destroy()
     {
         Pad.RemoveObjectFromPanel(this.Panel);
+        GameObject.Destroy(this.gameObject);
     }
     #endregion
 
@@ -80,6 +84,7 @@ public class FireElemental : MonoBehaviour, IPanelObject, ISpellCaster, IDamagab
     void Start()
     {
         Element = Element.Fire;
+        random = new System.Random(1);
 
         SpellBook = new Dictionary<string, SpellCard>();
         SpellBook.Add("FirePit", new FirePitSpell(1));
@@ -93,6 +98,8 @@ public class FireElemental : MonoBehaviour, IPanelObject, ISpellCaster, IDamagab
         Pad.SpawnObject(this);
 
         movementCooldown = 0;
+
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -101,8 +108,50 @@ public class FireElemental : MonoBehaviour, IPanelObject, ISpellCaster, IDamagab
         UpdateObject();
     }
 
+    Direction moveDir = Direction.Left;
+
     public void UpdateObject()
     {
+        mana += 1 / Time.deltaTime * 1;
 
+        movementCooldown += Time.deltaTime;
+        if (movementCooldown > 2f)
+        {
+            if (moveDir == Direction.Left && Coordinate.x == 3)
+            {
+                moveDir = Direction.Right;
+            }
+            else if (moveDir == Direction.Right && Coordinate.x == 5)
+            {
+                moveDir = Direction.Left;
+            }
+
+            Move(moveDir);
+
+            movementCooldown = 0;
+        }
+
+        if (Player.Coordinate.y == Coordinate.y)
+        {
+            EquippedSpell = "FireBall";
+        }
+        else if (Player.Coordinate == Coordinate - new Vector2Int(3, 0))
+        {
+            EquippedSpell = "FirePit";
+        }
+
+        if (EquippedSpell != null && moveDir != Direction.Left)
+        {
+            if (SpellBook[EquippedSpell].Cast(this, Pad, Coordinate, true))
+            {
+                Debug.Log("fe cast " + EquippedSpell);
+            }
+            EquippedSpell = null;
+        }
+
+        foreach (var spell in SpellBook.Values)
+        {
+            spell.Update();
+        }
     }
 }

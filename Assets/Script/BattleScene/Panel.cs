@@ -3,6 +3,11 @@
 
 public class Panel : MonoBehaviour
 {
+    public SpriteRenderer SpriteRenderer;
+    public Pad pad;
+
+    public static System.Random random = new System.Random(0);
+
     public Vector2Int Coordinate;
 
     private IPanelObject panelObject = null;
@@ -62,7 +67,18 @@ public class Panel : MonoBehaviour
 
     public void Start()
     {
+        pad = GameObject.FindGameObjectWithTag("Pad").GetComponent<Pad>();
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        if (Coordinate.x <= 2)
+        {
+            SpriteRenderer.sprite = pad.GetComponent<PanelSpriteContainer>().PanelSprites[random.Next(0, 3)];
+        }
+        else
+        {
+            SpriteRenderer.sprite = pad.GetComponent<PanelSpriteContainer>().PanelSprites[random.Next(4, 6)];
+        }
 
+        transform.localScale *= 1.2f;
     }
 
     // Update is called once per frame

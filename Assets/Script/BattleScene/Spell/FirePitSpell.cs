@@ -7,24 +7,30 @@ class FirePitSpell : SpellCard
     public FirePitSpell(float baseDamage)
     {
         this.BaseDamage = baseDamage;
+        BaseCooldown = 5;
+        ManaCost = 10;
     }
 
-    public override bool Cast(ISpellCaster caster, Pad pad, Vector2Int coordinate)
+    public override bool Cast(ISpellCaster caster, Pad pad, Vector2Int coordinate,bool flip = false)
     {
-        //check for mana cost, cooldown stuff
-        //not enough -> return false;
-
-        if (caster.GetMana() < ManaCost)
+        if (!CheckCast(caster))
         {
             return false;
         }
-        var target = GetCastRange(coordinate)[0];
+        var target = GetCastRange(coordinate,flip)[0];
         pad.SpawnPanelEffect(target, new BurnPanelEffect(BaseDamage));
         return true;
     }
 
-    public override List<Vector2Int> GetCastRange(Vector2Int casterPosition)
+    public override List<Vector2Int> GetCastRange(Vector2Int casterPosition,bool flip = false)
     {
-        return new List<Vector2Int>() { casterPosition + new Vector2Int(3, 0) };
+        if (!flip)
+        {
+            return new List<Vector2Int>() { casterPosition + new Vector2Int(3, 0) };
+        }
+        else
+        {
+            return new List<Vector2Int>() { casterPosition - new Vector2Int(3, 0) };
+        }
     }
 }

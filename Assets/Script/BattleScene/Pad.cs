@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class Pad : MonoBehaviour
 {
+    public float Spacing = 1.5f;
+
     public Row[] Rows;
 
     public List<Projectile> EffectList;
+    public GameObject RowPrefab;
+    public GameObject PanelPrefab;
 
     // Use this for initialization
     //public Pad(int rowPerPad, int panelPerRow)
@@ -23,6 +27,14 @@ public class Pad : MonoBehaviour
     void Start()
     {
         EffectList = new List<Projectile>();
+        //Rows = new Row[3];
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    var row = Instantiate(RowPrefab, transform);
+        //    row.transform.position = transform.position + new Vector3(-7, i) * Spacing;
+        //    Rows[i] = row.GetComponent<Row>();
+        //    Rows[i].PanelPrefab = PanelPrefab;
+        //}
     }
 
     public bool Move(Panel from, Direction direction)

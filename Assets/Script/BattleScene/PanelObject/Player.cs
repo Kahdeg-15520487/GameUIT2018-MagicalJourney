@@ -79,6 +79,7 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
     public void Destroy()
     {
         Pad.RemoveObjectFromPanel(this.Panel);
+        this.enabled = false;
     }
     #endregion
 
@@ -114,6 +115,7 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
 
     public void UpdateObject()
     {
+        mana += 1 / Time.deltaTime * 1;
 
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
@@ -159,8 +161,13 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                SpellBook[EquippedSpell].Cast(this, Pad, Coordinate);
+                Fire();
             }
+        }
+
+        foreach (var spell in SpellBook.Values)
+        {
+            spell.Update();
         }
     }
 
@@ -186,7 +193,10 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
 
     public void Fire()
     {
-        SpellBook[EquippedSpell].Cast(this, Pad, Coordinate);
+        if (SpellBook[EquippedSpell].Cast(this, Pad, Coordinate, true))
+        {
+            Debug.Log("player cast " + EquippedSpell);
+        }
     }
 
     void GetInput()

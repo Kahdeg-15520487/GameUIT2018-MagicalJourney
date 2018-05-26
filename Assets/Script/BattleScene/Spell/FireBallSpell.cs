@@ -10,6 +10,7 @@ public class FireBallSpell : SpellCard
         BaseDamage = baseDamage;
         Element = Element.Fire;
         ManaCost = 10;
+        BaseCooldown = 5;
     }
 
     public override float GetDamage(Element other)
@@ -17,23 +18,28 @@ public class FireBallSpell : SpellCard
         return DamageCalculator.CalculateDamage(BaseDamage, Element, other);
     }
 
-    public override bool Cast(ISpellCaster caster, Pad pad, Vector2Int coordinate)
+    public override bool Cast(ISpellCaster caster, Pad pad, Vector2Int coordinate, bool flip = false)
     {
-        //check mana cost
-
-        if (caster.GetMana() < ManaCost)
+        if (!CheckCast(caster))
         {
             return false;
         }
 
-        var target = GetCastRange(coordinate)[0];
-        pad.SpawnProjectile(new FireBallProjectile(target, Act));
+        var target = GetCastRange(coordinate, flip)[0];
+        pad.SpawnProjectile(new FireBallProjectile(target, Act, flip));
         return true;
     }
 
-    public override List<Vector2Int> GetCastRange(Vector2Int casterPosition)
+    public override List<Vector2Int> GetCastRange(Vector2Int casterPosition, bool flip = false)
     {
-        return new List<Vector2Int>() { casterPosition + new Vector2Int(1, 0) };
+        if (!flip)
+        {
+            return new List<Vector2Int>() { casterPosition + new Vector2Int(1, 0) };
+        }
+        else
+        {
+            return new List<Vector2Int>() { casterPosition - new Vector2Int(1, 0) };
+        }
     }
 
     protected override void Act(Panel panel)

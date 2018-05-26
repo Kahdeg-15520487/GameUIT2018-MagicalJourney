@@ -8,25 +8,26 @@ class MagicMissileSpell : SpellCard
     public MagicMissileSpell(float baseDamage)
     {
         BaseDamage = baseDamage;
+        BaseCooldown = 5;
         ManaCost = 5;
     }
 
-    public override bool Cast(ISpellCaster caster, Pad pad, Vector2Int coordinate)
+    public override bool Cast(ISpellCaster caster, Pad pad, Vector2Int coordinate, bool flip = false)
     {
         //check for mana cost, cooldown stuff
         //not enough -> return false;
 
-        if (caster.GetMana() < ManaCost)
+        if (!CheckCast(caster))
         {
             return false;
         }
 
-        var target = GetCastRange(coordinate)[0];
+        var target = GetCastRange(coordinate, flip)[0];
         pad.SpawnProjectile(new BasicProjectile(target, Act));
         return true;
     }
 
-    public override List<Vector2Int> GetCastRange(Vector2Int casterPosition)
+    public override List<Vector2Int> GetCastRange(Vector2Int casterPosition, bool flip = false)
     {
         return new List<Vector2Int>() { casterPosition + new Vector2Int(1, 0) };
     }
