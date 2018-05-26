@@ -43,7 +43,6 @@ public class ItemEquip : MonoBehaviour {
 			//dat anh cua item co the equip la item do
 			EquipmentImage = transform.GetChild (0).GetComponentInChildren<Image> ().sprite;
 
-			Debug.Log((transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name));
 			//neu anh thuoc loai consumable
 			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Chocolate Mint" ||
 			    transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Milk Tea" ||

@@ -17,9 +17,9 @@ public class EquipmentEquip : MonoBehaviour {
 					image = ItemEquip.EquipmentImage;
 					transform.parent.GetComponent<Image> ().sprite = image;
 				}
-			} else {
-				if (this.gameObject.name != "Consumable1" ||
-					this.gameObject.name != "Consumable2" ||
+			} else if (ItemEquip.EquipmentType == "Equipment") {
+				if (this.gameObject.name != "Consumable1" &&
+					this.gameObject.name != "Consumable2" &&
 					this.gameObject.name != "Consumable3") {
 					image = ItemEquip.EquipmentImage;
 					transform.parent.GetComponent<Image> ().sprite = image;

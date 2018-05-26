@@ -1939,7 +1939,7 @@ Prefab:
         type: 3}
     - target: {fileID: 1577190335288284, guid: c2e13651326811a459be4046cccc42f4, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1822322044098462, guid: c2e13651326811a459be4046cccc42f4, type: 2}
       propertyPath: m_IsActive
@@ -1947,7 +1947,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1130732728104436, guid: c2e13651326811a459be4046cccc42f4, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1585222631423430, guid: c2e13651326811a459be4046cccc42f4, type: 2}
       propertyPath: m_IsActive
