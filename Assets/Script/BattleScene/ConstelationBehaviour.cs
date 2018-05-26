@@ -19,6 +19,8 @@ public class ConstelationBehaviour : MonoBehaviour
     {
         if (Player.SP >= 100)
         {
+            Player.SP = 0;
+
             GestureScript.gameObject.SetActive(true);
             Drawer.SetActive(true);
             dimmer.SetActive(true);
@@ -63,6 +65,7 @@ public class ConstelationBehaviour : MonoBehaviour
         {
             if (GestureScript.Success)
             {
+                GestureScript.Success = false;
                 GestureScript.gameObject.SetActive(false);
                 Drawer.SetActive(false);
                 dimmer.SetActive(false);

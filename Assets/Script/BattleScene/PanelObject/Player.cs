@@ -59,7 +59,7 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
     public int AP { get { return ap; } }
 
     private float sp = 0;
-    public float SP { get { return sp; } }
+    public float SP { get { return sp; } set { sp = value; } }
 
     private float movementCooldown = 0;
 
@@ -175,6 +175,16 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
             if (mana < 20)
             {
                 mana += 2f;
+            }
+
+            if (sp > 100)
+            {
+                sp = 100;
+            }
+
+            if (mana > 20)
+            {
+                mana = 20;
             }
             timer = 0;
         }

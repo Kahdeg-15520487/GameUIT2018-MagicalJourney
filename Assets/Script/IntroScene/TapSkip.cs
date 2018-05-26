@@ -18,7 +18,7 @@ public class TapSkip : MonoBehaviour
         videoPlayer = GetComponent<VideoPlayer>();
         videoPlayer.Play();
 #elif UNITY_ANDROID
-        Handheld.PlayFullScreenMovie("intro.mp4", Color.black, FullScreenMovieControlMode.Hidden);
+        Handheld.PlayFullScreenMovie("intro.mp4", Color.black, FullScreenMovieControlMode.CancelOnInput);
         GameObject.Destroy(text);
 #endif
     }
