@@ -106,6 +106,12 @@ public class Pad : MonoBehaviour
             Debug.Log("null");
             return false;
         }
+
+        if (panel.PanelObject != null)
+        {
+            return false;
+        }
+
         panel.PanelObject = obj;
         panel.PanelObject.SetPad(this);
         return true;

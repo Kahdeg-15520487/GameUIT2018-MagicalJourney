@@ -176,6 +176,16 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
             {
                 mana += 2f;
             }
+
+            if (sp > 100)
+            {
+                sp = 100;
+            }
+
+            if (mana > 20)
+            {
+                mana = 20;
+            }
             timer = 0;
         }
 
