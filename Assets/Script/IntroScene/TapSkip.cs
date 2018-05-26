@@ -22,7 +22,7 @@ public class TapSkip : MonoBehaviour {
         }
         if ((ulong)videoPlayer.frame == videoPlayer.frameCount)
         {
-            SceneManager.LoadScene("tt", LoadSceneMode.Single);
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         }
     }
 }
