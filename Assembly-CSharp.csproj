@@ -114,6 +114,12 @@
      <None Include="Assets\SFX\this_is_sfx.txt" />
      <None Include="Assets\Sprite\this_is_sprite.txt" />
      <None Include="Assets\Mouse Gesture Interpretation\SceneExemple\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <Compile Include="Assets\Script\IntroScene\TapSkip.cs" />
+     <None Include="Assets\Scene\this_is_scene.txt" />
+     <None Include="Assets\Script\BattleScene\this_is_battle_scene.txt" />
+     <None Include="Assets\Script\this_is_script.txt" />
+     <None Include="Assets\SFX\this_is_sfx.txt" />
+     <None Include="Assets\Sprite\this_is_sprite.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
