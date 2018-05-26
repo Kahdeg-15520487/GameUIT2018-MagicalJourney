@@ -35,12 +35,12 @@ public class TapSkip : MonoBehaviour
         }
         if ((ulong)videoPlayer.frame == videoPlayer.frameCount)
         {
-            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+            SceneManager.LoadScene("MainMenu");
         }
 #endif
 
 #if UNITY_ANDROID
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainMenu");
 #endif
     }
 }

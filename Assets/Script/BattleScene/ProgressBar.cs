@@ -7,10 +7,10 @@ public class ProgressBar : MonoBehaviour
     public UnityEngine.UI.Image Image;
     public UnityEngine.UI.Text Text;
 
-    public void SetPercentage(float f)
+    public void SetPercentage(float f, string s = null)
     {
         Image.fillAmount = f;
-        Text.text = (int)(f * 100) + "%";
+        Text.text = s ?? (int)(f * 100) + "%";
     }
 
     // Use this for initialization

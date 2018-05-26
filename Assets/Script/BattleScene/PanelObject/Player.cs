@@ -10,13 +10,69 @@ public enum Direction
     Up, Down, Left, Right
 }
 
+public class Consumable
+{
+    bool isUsed = false;
+    float HP = 0;
+    float MP = 0;
+    public Consumable(float hp = 0, float mp = 0)
+    {
+        HP = hp;
+        MP = mp;
+        isUsed = false;
+    }
+
+    public void Consume(Player player)
+    {
+        if (!isUsed)
+        {
+            player.Health += HP;
+            player.Mana += MP;
+            isUsed = true;
+        }
+    }
+}
+
 public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
 {
+    public UnityEngine.UI.Image ConsumableButton1;
+    public UnityEngine.UI.Image ConsumableButton2;
+    public UnityEngine.UI.Image ConsumableButton3;
+    public Consumable[] Consumables = new Consumable[3];
+    public void ConsumeConsumable1()
+    {
+        if (Consumables[0] != null)
+        {
+            Consumables[0].Consume(this);
+            var color = ConsumableButton1.color;
+            ConsumableButton1.color = new Color(color.r, color.g, color.b, 0);
+        }
+    }
+    public void ConsumeConsumable2()
+    {
+        if (Consumables[1] != null)
+        {
+            Consumables[1].Consume(this);
+            var color = ConsumableButton2.color;
+            ConsumableButton2.color = new Color(color.r, color.g, color.b, 0);
+        }
+    }
+    public void ConsumeConsumable3()
+    {
+        if (Consumables[2] != null)
+        {
+            Consumables[2].Consume(this);
+            var color = ConsumableButton3.color;
+            ConsumableButton3.color = new Color(color.r, color.g, color.b, 0);
+        }
+    }
+
     public ProgressBar StarPointBar;
     public ProgressBar HPBar;
     public ProgressBar MPBar;
 
-    public UnityEngine.UI.Text CastButton;
+    public UnityEngine.UI.Image CastButton;
+    public Sprite[] SpellcardsSprite;
 
     public Sprite[] Sprites;
     public SpriteRenderer SpriteRenderer;
@@ -28,7 +84,7 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
     public Element GetElement() { return Element; }
 
     private float health = 500;
-    public float Health { get { return health; } }
+    public float Health { get { return health; } set { health = value; } }
     public float GetHealth() { return health; }
     public float ReceiveDamage(float damage)
     {
@@ -51,7 +107,7 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
     }
 
     private float mana = 20;
-    public float Mana { get { return mana; } }
+    public float Mana { get { return mana; } set { mana = value; } }
     public float GetMana() { return mana; }
     public float SetMana(float m) { return mana -= m; }
 
@@ -115,7 +171,7 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
         SpellBook.Add("FireBall", new FireBallSpell(150));
         SpellBook.Add("SummonWall", new SummonWallSpell());
         EquippedSpell = "MagicMissile";
-        CastButton.text = EquippedSpell;
+        CastButton.sprite = SpellcardsSprite[0];
 
         Dead += (o, e) => this.Destroy();
 
@@ -124,6 +180,31 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
         Pad.SpawnObject(this);
 
         movementCooldown = 0;
+
+        //load equipment data
+
+        //load consumable data
+        var con1 = PlayerPrefs.GetString("Consumable1");
+        var con2 = PlayerPrefs.GetString("Consumable2");
+        var con3 = PlayerPrefs.GetString("Consumable3");
+
+        if (!string.IsNullOrEmpty(con1))
+        {
+            Consumables[0] = new Consumable(10, 10);
+            ConsumableButton1.sprite = Resources.Load<Sprite>("Item/" + con1);
+        }
+
+        if (!string.IsNullOrEmpty(con2))
+        {
+            Consumables[1] = new Consumable(10, 10);
+            ConsumableButton2.sprite = Resources.Load<Sprite>("Item/" + con2);
+        }
+
+        if (!string.IsNullOrEmpty(con3))
+        {
+            Consumables[2] = new Consumable(10, 10);
+            ConsumableButton3.sprite = Resources.Load<Sprite>("Item/" + con3);
+        }
     }
 
     private Queue<Direction> movementQueue = new Queue<Direction>(2);
@@ -199,9 +280,9 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
             timer5 = 0;
         }
 
-        StarPointBar.SetPercentage(sp / 100);
-        HPBar.SetPercentage(health / 500);
-        MPBar.SetPercentage(mana / 20);
+        StarPointBar.SetPercentage(sp / 100, sp.ToString());
+        HPBar.SetPercentage(health / 500, health + "/" + 500);
+        MPBar.SetPercentage(mana / 20, mana + "/" + 20);
     }
 
     float timer = 0;
@@ -271,28 +352,28 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
         }
     }
 
+    public void SetSpellMagicmissile()
+    {
+        EquippedSpell = "MagicMissile";
+        CastButton.sprite = SpellcardsSprite[0];
+    }
+
     public void SetSpellFireball()
     {
         EquippedSpell = "FireBall";
-        CastButton.text = EquippedSpell;
+        CastButton.sprite = SpellcardsSprite[1];
     }
 
     public void SetSpellFirepit()
     {
         EquippedSpell = "FirePit";
-        CastButton.text = EquippedSpell;
+        CastButton.sprite = SpellcardsSprite[2];
     }
 
     public void SetSpellSummonwall()
     {
         EquippedSpell = "SummonWall";
-        CastButton.text = EquippedSpell;
-    }
-
-    public void SetSpellMagicmissile()
-    {
-        EquippedSpell = "MagicMissile";
-        CastButton.text = EquippedSpell;
+        CastButton.sprite = SpellcardsSprite[3];
     }
 
     public void MoveLeft()

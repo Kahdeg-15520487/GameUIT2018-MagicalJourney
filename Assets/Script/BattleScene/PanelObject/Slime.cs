@@ -28,6 +28,7 @@ public class Slime : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
         Debug.Log("receive " + damage + " damage, " + health + " hp left");
         if (health <= 0)
         {
+            IsEnabled = false;
             if (Dead != null)
             {
                 Dead.Invoke(this, null);
@@ -60,6 +61,9 @@ public class Slime : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
     }
 
     public Panel Panel { get; set; }
+    bool isRunAway = false;
+    public bool IsRunAway { get { return isRunAway; } set { isRunAway = value; } }
+
     public void SetPanel(Panel panel)
     {
         Panel = panel;
@@ -114,6 +118,11 @@ public class Slime : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
     // Update is called once per frame
     void Update()
     {
+        if (isRunAway)
+        {
+            transform.position += new Vector3(1, 1) * 5 * Time.deltaTime;
+        }
+
         if (!IsEnabled)
         {
             return;

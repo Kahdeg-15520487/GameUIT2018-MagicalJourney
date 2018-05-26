@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 public class overworld_behavior : MonoBehaviour {
     public void GoToHell()
     {
-        SceneManager.LoadScene("TurtorialScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("TurtorialScene");
     }
     public void GoToBattle()
     {
-        SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("BattleScene");
     }
     public void GoToShop()
     {
-        SceneManager.LoadScene("JournalScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("JournalScene");
     }
     // Use this for initialization
     void Start () {

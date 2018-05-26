@@ -14,6 +14,7 @@ public class ConstelationBehaviour : MonoBehaviour
     public GameObject Pad;
 
     public bool isInContelation = false;
+    public bool isPostContelation = false;
 
     public void BeginContelation()
     {
@@ -33,7 +34,6 @@ public class ConstelationBehaviour : MonoBehaviour
                 var s = go.GetComponent<Slime>();
                 if (s != null)
                 {
-                    s.enabled = false;
                     s.IsEnabled = false;
                 }
             }
@@ -58,6 +58,8 @@ public class ConstelationBehaviour : MonoBehaviour
 
     }
 
+    float timer = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -70,21 +72,31 @@ public class ConstelationBehaviour : MonoBehaviour
                 Drawer.SetActive(false);
                 dimmer.SetActive(false);
 
-                Player.gameObject.GetComponent<Player>().enabled = true;
-                Pad.GetComponent<Pad>().enabled = true;
-
                 foreach (var go in GameObject.FindGameObjectsWithTag("Enemy"))
                 {
                     var s = go.GetComponent<Slime>();
                     if (s != null)
                     {
-                        s.enabled = true;
-                        s.IsEnabled = true;
-                        MonsterSpawner.ClearWave();
+                        s.IsRunAway = true;
+                        s.SpriteRenderer.sprite = s.Sprites[3];
                     }
                 }
 
                 isInContelation = false;
+                isPostContelation = true;
+            }
+        }
+
+        if (isPostContelation)
+        {
+            timer += Time.deltaTime;
+            if (timer > 3)
+            {
+                Player.gameObject.GetComponent<Player>().enabled = true;
+                Pad.GetComponent<Pad>().enabled = true;
+
+                MonsterSpawner.ClearWave();
+                isPostContelation = false;
             }
         }
     }

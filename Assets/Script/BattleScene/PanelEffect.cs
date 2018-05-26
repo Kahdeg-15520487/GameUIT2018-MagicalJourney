@@ -25,11 +25,17 @@ public abstract class PanelEffect
         Duration += Time.deltaTime;
     }
 
+    public GameObject PresentationObject;
     /// <summary>
     /// end the effect immediately
     /// </summary>
     public virtual void End()
     {
         Duration = BaseDuration + 1;
+
+        if (PresentationObject != null)
+        {
+            GameObject.Destroy(PresentationObject);
+        }
     }
 }

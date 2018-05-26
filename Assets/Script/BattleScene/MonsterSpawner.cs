@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
+    public EndgameBehaviour EndgameBehaviour;
+
     public Pad Pad;
 
     public GameObject SlimePrefab;
@@ -23,7 +25,7 @@ public class MonsterSpawner : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        monsterList = new List<Slime>();
     }
 
     public void SpawnWave()
@@ -41,7 +43,7 @@ public class MonsterSpawner : MonoBehaviour
 
     public bool AllClear()
     {
-        return monsterList.TrueForAll(s => s.IsEnabled = false);
+        return monsterList.TrueForAll(s => s.IsEnabled == false && s.Health <= 0);
     }
 
     // Update is called once per frame
@@ -49,9 +51,15 @@ public class MonsterSpawner : MonoBehaviour
     {
         if (monsterList.Count == 0 || AllClear())
         {
+            ClearWave();
             if (currentWave < WaveConfigs.Count)
             {
                 SpawnWave();
+            }
+            else
+            {
+                //you won the level, go back to overworld
+                EndgameBehaviour.StartTheEnd();
             }
         }
     }

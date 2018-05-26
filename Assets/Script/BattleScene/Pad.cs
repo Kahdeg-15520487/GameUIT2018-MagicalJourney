@@ -14,6 +14,8 @@ public class Pad : MonoBehaviour
     public GameObject PanelPrefab;
     public GameObject WallPrefab;
     public GameObject BulletPrefab;
+    public GameObject FireballPrefab;
+    public GameObject FirepitPrefab;
 
     public Player Player;
 
@@ -121,7 +123,15 @@ public class Pad : MonoBehaviour
     {
         projectile.Pad = this;
         EffectList.Add(projectile);
-        var bullet = Instantiate(BulletPrefab);
+
+        GameObject prefab = BulletPrefab;
+
+        if (projectile.GetType() == typeof(FireBallProjectile))
+        {
+            prefab = FireballPrefab;
+        }
+
+        var bullet = Instantiate(prefab);
         var bb = bullet.GetComponent<ProjectileBehaviour>();
         var panel = GetPanel(projectile.Coordinate);
         bb.transform.position = panel.transform.position + new Vector3(0, 0, -4);
@@ -147,13 +157,35 @@ public class Pad : MonoBehaviour
             Debug.Log(coordinate);
             return false;
         }
+
+        if (panel.PanelEffect != null)
+        {
+            return false;
+        }
+
         panel.PanelEffect = panelEffect;
-        Debug.Log("lala");
+
+        if (panelEffect.GetType() == typeof(BurnPanelEffect))
+        {
+            var firepit = Instantiate(FirepitPrefab);
+            firepit.transform.position = panel.transform.position + new Vector3(0, 0, -4);
+            panelEffect.PresentationObject = firepit;
+        }
         return true;
     }
 
     public bool SpawnPanelEffect(Panel panel, PanelEffect panelEffect)
     {
+        if (panel == null)
+        {
+            return false;
+        }
+
+        if (panel.PanelEffect != null)
+        {
+            return false;
+        }
+
         panel.PanelEffect = panelEffect;
         return true;
     }

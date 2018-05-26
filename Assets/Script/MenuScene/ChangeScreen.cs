@@ -17,11 +17,13 @@ public class ChangeScreen : MonoBehaviour {
 
     public void GotoBatleScreen()
     {
-        SceneManager.LoadScene("OverWorldMapScene", LoadSceneMode.Single);
+        LoaderBehaviour.SceneName = "OverWorldMapScene";
+        SceneManager.LoadScene("LoadScreen");
     }
 
     public void GotoOverWorld()
     {
-        SceneManager.LoadScene("OverWorldMapScene", LoadSceneMode.Single);
+        LoaderBehaviour.SceneName = "OverWorldMapScene";
+        SceneManager.LoadScene("LoadScreen");
     }
 }
