@@ -13,13 +13,14 @@ class FirePitSpell : SpellCard
 
     public override bool Cast(ISpellCaster caster, Pad pad, Vector2Int coordinate,bool flip = false)
     {
-        if (!CheckCast(caster))
+        if (CheckCast(caster))
         {
-            return false;
+            var target = GetCastRange(coordinate, flip)[0];
+            Debug.Log(target + " " + flip);
+            pad.SpawnPanelEffect(target, new BurnPanelEffect(BaseDamage));
+            return true;
         }
-        var target = GetCastRange(coordinate,flip)[0];
-        pad.SpawnPanelEffect(target, new BurnPanelEffect(BaseDamage));
-        return true;
+        return false;
     }
 
     public override List<Vector2Int> GetCastRange(Vector2Int casterPosition,bool flip = false)

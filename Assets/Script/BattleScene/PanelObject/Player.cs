@@ -12,15 +12,34 @@ public enum Direction
 
 public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
 {
+    public ProgressBar StarPointBar;
+    public ProgressBar HPBar;
+    public ProgressBar MPBar;
+
+    public UnityEngine.UI.Text CastButton;
+
+    public Sprite[] Sprites;
+    public SpriteRenderer SpriteRenderer;
+
+    float spriteTimer = 0;
+    int currentSprite = 0;
+
     public Element Element { get; set; }
     public Element GetElement() { return Element; }
 
-    private float health = 50;
+    private float health = 500;
     public float Health { get { return health; } }
     public float GetHealth() { return health; }
     public float ReceiveDamage(float damage)
     {
         health -= damage;
+        sp -= 10;
+        stopSP = true;
+        accelerateSP = false;
+        if (sp < 0)
+        {
+            sp = 0;
+        }
         if (health <= 0)
         {
             if (Dead != null)
@@ -79,7 +98,7 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
     public void Destroy()
     {
         Pad.RemoveObjectFromPanel(this.Panel);
-        this.enabled = false;
+        SpriteRenderer.enabled = false;
     }
     #endregion
 
@@ -91,10 +110,12 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
         Element = Element.Neutral;
 
         SpellBook = new Dictionary<string, SpellCard>();
-        SpellBook.Add("MagicMissile", new MagicMissileSpell(10));
+        SpellBook.Add("MagicMissile", new MagicMissileSpell(7));
         SpellBook.Add("FirePit", new FirePitSpell(1));
-        SpellBook.Add("FireBall", new FireBallSpell(15));
+        SpellBook.Add("FireBall", new FireBallSpell(150));
+        SpellBook.Add("SummonWall", new SummonWallSpell());
         EquippedSpell = "MagicMissile";
+        CastButton.text = EquippedSpell;
 
         Dead += (o, e) => this.Destroy();
 
@@ -110,26 +131,95 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            mana = 200;
+        }
+
+        if (Input.GetKeyUp(KeyCode.T))
+        {
+            sp = 100;
+        }
+
         UpdateObject();
+
+        if (currentSprite != 0)
+        {
+            spriteTimer += Time.deltaTime;
+            if (spriteTimer > 0.5f)
+            {
+                currentSprite = 0;
+                spriteTimer = 0;
+                SpriteRenderer.sprite = Sprites[currentSprite];
+            }
+        }
+
+        timer += Time.deltaTime;
+        if (timer > 1)
+        {
+            if (sp < 100)
+            {
+                if (stopSP)
+                {
+                    stopSP = false;
+                }
+                else
+                {
+                    if (accelerateSP)
+                    {
+                        sp += 5;
+                    }
+                    else sp += 1;
+                }
+            }
+            if (mana < 20)
+            {
+                mana += 2f;
+            }
+            timer = 0;
+        }
+
+        timer5 += Time.deltaTime;
+        if (timer5 > 5)
+        {
+            if (stopSP == false)
+            {
+                accelerateSP = true;
+            }
+            timer5 = 0;
+        }
+
+        StarPointBar.SetPercentage(sp / 100);
+        HPBar.SetPercentage(health / 500);
+        MPBar.SetPercentage(mana / 20);
     }
+
+    float timer = 0;
+    float timer5 = 0;
+    bool stopSP = false;
+    bool accelerateSP = false;
 
     public void UpdateObject()
     {
-        mana += 1 / Time.deltaTime * 1;
 
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
-            EquippedSpell = "MagicMissile";
+            SetSpellMagicmissile();
         }
 
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
-            EquippedSpell = "FirePit";
+            SetSpellFireball();
         }
 
         if (Input.GetKeyUp(KeyCode.Alpha3))
         {
-            EquippedSpell = "FireBall";
+            SetSpellFirepit();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha4))
+        {
+            SetSpellSummonwall();
         }
 
         GetInput();
@@ -171,6 +261,30 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
         }
     }
 
+    public void SetSpellFireball()
+    {
+        EquippedSpell = "FireBall";
+        CastButton.text = EquippedSpell;
+    }
+
+    public void SetSpellFirepit()
+    {
+        EquippedSpell = "FirePit";
+        CastButton.text = EquippedSpell;
+    }
+
+    public void SetSpellSummonwall()
+    {
+        EquippedSpell = "SummonWall";
+        CastButton.text = EquippedSpell;
+    }
+
+    public void SetSpellMagicmissile()
+    {
+        EquippedSpell = "MagicMissile";
+        CastButton.text = EquippedSpell;
+    }
+
     public void MoveLeft()
     {
         Move(Direction.Left);
@@ -193,9 +307,11 @@ public class Player : MonoBehaviour, IPanelObject, ISpellCaster, IDamagable
 
     public void Fire()
     {
-        if (SpellBook[EquippedSpell].Cast(this, Pad, Coordinate, true))
+        if (SpellBook[EquippedSpell].Cast(this, Pad, Coordinate, false))
         {
             Debug.Log("player cast " + EquippedSpell);
+            currentSprite = 1;
+            SpriteRenderer.sprite = Sprites[currentSprite];
         }
     }
 

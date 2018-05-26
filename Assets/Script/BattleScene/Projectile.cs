@@ -50,11 +50,17 @@ public abstract class Projectile
     /// </summary>
     public abstract Vector2Int NextPanel();
 
+    public GameObject BulletObject;
+
     /// <summary>
     /// end the effect immediately
     /// </summary>
     public virtual void End()
     {
         Duration = BaseDuration + 1;
+        if (BulletObject != null)
+        {
+            GameObject.Destroy(BulletObject);
+        }
     }
 }

@@ -30,5 +30,12 @@ class BurnPanelEffect : PanelEffect
                 obj.ReceiveDamage(DamageOverTime);
             }
         }
+        Panel.SpriteRenderer.color = Color.red;
+        Debug.Log(Panel.SpriteRenderer.color);
+    }
+    public override void End()
+    {
+        base.End();
+        Panel.SpriteRenderer.color = Color.white;
     }
 }

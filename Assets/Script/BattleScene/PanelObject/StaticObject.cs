@@ -3,6 +3,12 @@ using UnityEngine;
 
 class StaticObject : MonoBehaviour, IPanelObject, IDamagable
 {
+    public Sprite[] Sprites;
+    public SpriteRenderer SpriteRenderer;
+
+    float spriteTimer = 0;
+    int currentSprite = 0;
+
     public Element Element;
     public Element GetElement() { return Element; }
 
@@ -13,6 +19,18 @@ class StaticObject : MonoBehaviour, IPanelObject, IDamagable
     {
         Debug.Log("receive " + damage + " damage, " + health + " hp left");
         health -= damage;
+        if (health > 400)
+        {
+            currentSprite = 0;
+        }
+        else if (health > 200 && health < 400)
+        {
+            currentSprite = 1;
+        }
+        else
+        {
+            currentSprite = 2;
+        }
         if (health <= 0)
         {
             if (Dead != null)
@@ -27,8 +45,8 @@ class StaticObject : MonoBehaviour, IPanelObject, IDamagable
 
     public void Start()
     {
+        Element = Element.Ground;
         Dead += (o, e) => this.Destroy();
-        Coordinate = new Vector2Int(4, 1);
 
         Pad.SpawnObject(this);
     }
@@ -69,6 +87,12 @@ class StaticObject : MonoBehaviour, IPanelObject, IDamagable
         Destroy(gameObject);
     }
     #endregion
+
+    void Update()
+    {
+
+        SpriteRenderer.sprite = Sprites[currentSprite];
+    }
 
     public void UpdateObject()
     {

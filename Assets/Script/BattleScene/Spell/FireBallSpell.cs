@@ -20,14 +20,13 @@ public class FireBallSpell : SpellCard
 
     public override bool Cast(ISpellCaster caster, Pad pad, Vector2Int coordinate, bool flip = false)
     {
-        if (!CheckCast(caster))
+        if (CheckCast(caster))
         {
-            return false;
+            var target = GetCastRange(coordinate, flip)[0];
+            pad.SpawnProjectile(new FireBallProjectile(target, Act, flip),flip);
+            return true;
         }
-
-        var target = GetCastRange(coordinate, flip)[0];
-        pad.SpawnProjectile(new FireBallProjectile(target, Act, flip));
-        return true;
+        return false;
     }
 
     public override List<Vector2Int> GetCastRange(Vector2Int casterPosition, bool flip = false)

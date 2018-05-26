@@ -92,6 +92,11 @@ public class Panel : MonoBehaviour
         if (panelEffect != null)
         {
             panelEffect.Update();
+            if (panelEffect.Duration > panelEffect.BaseDuration)
+            {
+                panelEffect.End();
+                panelEffect = null;
+            }
         }
     }
 }
