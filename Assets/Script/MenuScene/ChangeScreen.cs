@@ -17,6 +17,11 @@ public class ChangeScreen : MonoBehaviour {
 
     public void GotoBatleScreen()
     {
-        SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("OverWorldMapScene", LoadSceneMode.Single);
+    }
+
+    public void GotoOverWorld()
+    {
+        SceneManager.LoadScene("OverWorldMapScene", LoadSceneMode.Single);
     }
 }

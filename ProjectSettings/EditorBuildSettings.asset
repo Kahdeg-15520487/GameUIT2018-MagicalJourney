@@ -14,3 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/BattleScene.unity
     guid: ab50daaddec5ae24586d6fc50d167b66
+  - enabled: 1
+    path: Assets/Scene/OverWorldMapScene.unity
+    guid: 58cfef006fb90364c99990440505b966
+  - enabled: 1
+    path: Assets/Scene/JournalScene.unity
+    guid: 834a6ee89c5153e42afeec30490ee285

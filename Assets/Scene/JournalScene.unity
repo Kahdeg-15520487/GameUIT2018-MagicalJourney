@@ -1353,6 +1353,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114559898559466342, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224368854849460884, guid: c2e13651326811a459be4046cccc42f4,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1966,6 +1971,47 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114559898559466342, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114559898559466342, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114559898559466342, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2110815984}
+    - target: {fileID: 114559898559466342, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GotoOverWorld
+      objectReference: {fileID: 0}
+    - target: {fileID: 114559898559466342, guid: c2e13651326811a459be4046cccc42f4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2e13651326811a459be4046cccc42f4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2110815983 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1871544525227100, guid: c2e13651326811a459be4046cccc42f4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2110815982}
+--- !u!114 &2110815984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2110815983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689caa27cfc1c334db3fdd1c564af057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
