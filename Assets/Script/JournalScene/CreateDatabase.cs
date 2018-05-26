@@ -27,6 +27,27 @@ public class CreateDatabase : MonoBehaviour {
 		PlayerPrefs.SetInt ("CustardBool", 1);
 		PlayerPrefs.SetInt ("ChocolateBool", 1);
 		PlayerPrefs.SetInt ("CurseBool", 1);
+		PlayerPrefs.SetString ("GuildName", "Guild Amulet");
+		PlayerPrefs.SetString ("DenverName", "Denver Seal");
+		PlayerPrefs.SetString ("NecroticName", "Necrotic Seal");
+		PlayerPrefs.SetString ("TeabagName", "Tea Bag");
+		PlayerPrefs.SetString ("WitchName", "Witch Seal");
+		PlayerPrefs.SetString ("SecretKeyName", "Secret Key");
+		PlayerPrefs.SetString ("LoreScroll1Name", "Lore Scroll - Paragraph 1");
+		PlayerPrefs.SetString ("LoreScroll2Name", "Lore Scroll - Paragraph 4");
+		PlayerPrefs.SetString ("ScrapNoteName", "Scrap Note - Page 5");
+		PlayerPrefs.SetString ("SapphireName", "Sapphire Necklace");
+		PlayerPrefs.SetString ("RubyName", "Ruby Bracelet");
+		PlayerPrefs.SetString ("AetherName", "Aether Ring");
+		PlayerPrefs.SetString ("ZephyrName", "Zephyr Ring");
+		PlayerPrefs.SetString ("HermesName", "Hermes Ring");
+		PlayerPrefs.SetString ("RainbowName", "Rainbow Charm");
+		PlayerPrefs.SetString ("AntiqueName", "Antique Necklace");
+		PlayerPrefs.SetString ("HerbalName", "Herbal Tea");
+		PlayerPrefs.SetString ("MilkName", "Milk Tea");
+		PlayerPrefs.SetString ("CustardName", "Custard Pie");
+		PlayerPrefs.SetString ("ChocolateName", "Chocolate Mint");
+		PlayerPrefs.SetString ("CurseName", "Curse Seal");
 	}
 	
 	// Update is called once per frame

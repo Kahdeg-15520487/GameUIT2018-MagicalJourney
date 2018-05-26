@@ -40,63 +40,63 @@ public class ItemLoad : MonoBehaviour {
 		if (this.gameObject.name == "ItemContent") {
 			if (PlayerPrefs.GetInt ("SapphireBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("SapphireDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Sapphire;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("SapphireName");
 			}
 			if (PlayerPrefs.GetInt ("RubyBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("RubyDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Ruby;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("RubyName");
 			}
 			if (PlayerPrefs.GetInt ("AetherBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("AetherDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Aether;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("AetherName");
 			}
 			if (PlayerPrefs.GetInt ("HerbalBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("HerbalDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Herbal;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("HerbalName");
 			}
 			if (PlayerPrefs.GetInt ("ZephyrBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("ZephyrDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Zephyr;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("ZephyrName");
 			}
 			if (PlayerPrefs.GetInt ("HermesBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("HermesDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Hermes;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("HermesName");
 			}
 			if (PlayerPrefs.GetInt ("RainbowBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("RainbowDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Rainbow;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("RainbowName");
 			}
 			if (PlayerPrefs.GetInt ("AntiqueBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("AntiqueDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Antique;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("AntiqueName");
 			}
 			if (PlayerPrefs.GetInt ("MilkBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("MilkDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Milk;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("MilkName");
 			}
 			if (PlayerPrefs.GetInt ("CustardBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("CustardDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Custard;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("CustardName");
 			}
 			if (PlayerPrefs.GetInt ("ChocolateBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("ChocolateDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Chocolate;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("ChocolateName");
 			}
 			if (PlayerPrefs.GetInt ("CurseBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("CurseDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = Curse;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("CurseName");
 			}
 				
 		}
@@ -104,48 +104,48 @@ public class ItemLoad : MonoBehaviour {
 		if (this.gameObject.name == "KeyItemContent") {
 			if (PlayerPrefs.GetInt ("GuildBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("GuildDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = GuildAmulet;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("GuildName");
 			}
 			if (PlayerPrefs.GetInt ("DenverBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("DenverDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = DenverSeal;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("SapphireName");
 			}
 			if (PlayerPrefs.GetInt ("NecroticBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("NecroticDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = NecroticSeal;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("NecroticName");
 			}
 			if (PlayerPrefs.GetInt ("TeabagBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("TeabagDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = TeaBag;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("WitchName");
 			}
 			if (PlayerPrefs.GetInt ("WitchBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("WitchDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = WitchSeal;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("SapphireName");
 			}
 			if (PlayerPrefs.GetInt ("SecretKeyBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("SecretKeyDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = SecretKey;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("SecretKeyName");
 			}
 			if (PlayerPrefs.GetInt ("LoreScroll1Bool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("LoreScroll1Des");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = LoreScroll1;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("LoreScroll1Name");
 			}
 			if (PlayerPrefs.GetInt ("LoreScroll2Bool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("LoreScroll2Des");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = LoreScroll2;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("LoreScroll2Name");
 			}
 			if (PlayerPrefs.GetInt ("ScrapNoteBool") == 1) {
 				Transform newItem = Instantiate (Items, this.gameObject.transform);
-				newItem.GetComponentInChildren<Text> ().text = PlayerPrefs.GetString ("ScrapNoteDes");
 				newItem.GetChild (0).GetComponent<Image> ().sprite = ScrapNote;
+				newItem.GetChild (1).GetComponent<Text> ().text = PlayerPrefs.GetString ("ScrapNoteName");
 			}
 		}
 
