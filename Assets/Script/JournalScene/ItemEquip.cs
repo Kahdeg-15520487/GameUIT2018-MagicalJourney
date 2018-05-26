@@ -4,14 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ItemEquip : MonoBehaviour, IPointerDownHandler {
+public class ItemEquip : MonoBehaviour {
 
-	public Scrollbar ItemScrollBar;
+	private Text ItemDes;
 
-	public void OnPointerDown(PointerEventData eventdata)
+	void Awake()
 	{
-		
+		ItemDes = GameObject.Find ("ItemDescription").GetComponent<Text>();
 	}
-
+	public void OnItemClick()
+	{
+		Debug.Log ("Click on item " + this.gameObject.name);
+		ItemDes.text = this.gameObject.GetComponentInChildren<Text> ().text;
+	}
 
 }
