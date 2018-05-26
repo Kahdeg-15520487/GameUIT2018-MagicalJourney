@@ -9,14 +9,15 @@ public class ItemEquip : MonoBehaviour {
 	public static Sprite EquipmentImage; //luu anh cua item co the equip
 	public static string EquipmentType; //luu giu xem loai equipment duoc click la gi
 
-	private Text ItemDes; //luu description cho tat ca cac item
+	public static string ItemDesString; //luu description cho tat ca cac item
+	private Text ItemDes; //UI text hien thi description cho tat ca cac items
 	private Image itemImage; //luu hinh de preview cho keyitem
 	private Text SpellName; //luu ten cua spellname
 	void Awake()
 	{
 		EquipmentImage = null;
 		EquipmentType = null;
-		//tuy vao loai item ma chon item description text thich hop trong scene
+		//tuy vao loai item ma chon UI hien thi tuong ung text thich hop trong scene
 		if (transform.parent.gameObject.name == "ItemContent") {
 			ItemDes = GameObject.Find ("ItemDescription").GetComponent<Text> ();
 		}
@@ -33,11 +34,36 @@ public class ItemEquip : MonoBehaviour {
 	public void OnItemClick()
 	{
 		//khi nhan vao mot item thi cap nhat noi dung item description truoc, sau do
-		Debug.Log(this.gameObject.name);
 		//tuy vao loai item ma lam them cac hanh dong can thiet
 		//neu vat pham duoc click la mot item
 		if (transform.parent.gameObject.name == "ItemContent") {
-			ItemDes = GameObject.Find ("ItemDescription").GetComponent<Text> (); //cap nhat text cho description tuong ung
+
+			//cap nhat text description tuong ung cho tung item
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Chocolate Mint")
+				ItemDes.text = PlayerPrefs.GetString ("ChocolateDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Ruby Bracelet")
+				ItemDes.text = PlayerPrefs.GetString ("RubyDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Sapphire Necklace")
+				ItemDes.text = PlayerPrefs.GetString ("SapphireDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Milk Tea")
+				ItemDes.text = PlayerPrefs.GetString ("MilkDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Hermes Ring")
+				ItemDes.text = PlayerPrefs.GetString ("HermesDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Zephyr Ring")
+				ItemDes.text = PlayerPrefs.GetString ("ZephyrDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Rainbow Charm")
+				ItemDes.text = PlayerPrefs.GetString ("RainbowDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Herbal Tea")
+				ItemDes.text = PlayerPrefs.GetString ("HerbalDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Custard Pie")
+				ItemDes.text = PlayerPrefs.GetString ("CustardDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Curse Seal")
+				ItemDes.text = PlayerPrefs.GetString ("CurseDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Antique Necklace")
+				ItemDes.text = PlayerPrefs.GetString ("AntiqueDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Aether Ring")
+				ItemDes.text = PlayerPrefs.GetString ("AetherDes");
+
 
 			//dat anh cua item co the equip la item do
 			EquipmentImage = transform.GetChild (0).GetComponentInChildren<Image> ().sprite;
@@ -49,6 +75,7 @@ public class ItemEquip : MonoBehaviour {
 			    transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Custard Pie" ||
 			    transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Curse seal") {
 
+				//thi dat loai la consume (su dung cho equip item)
 				EquipmentType = "Consumable";
 			} else {
 				EquipmentType = "Equipment";
@@ -56,13 +83,31 @@ public class ItemEquip : MonoBehaviour {
 				
 		}
 		if (transform.parent.gameObject.name == "KeyItemContent") {
-			ItemDes = GameObject.Find ("KeyItemDescription").GetComponent<Text> ();
+			//dat text description tuong ung cho tung keyitem
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Denver Seal")
+				ItemDes.text = PlayerPrefs.GetString ("DenverDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Guild Amulet")
+				ItemDes.text = PlayerPrefs.GetString ("GuildDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Lore Scroll 1")
+				ItemDes.text = PlayerPrefs.GetString ("LoreScroll1Des");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Lore Scroll 2")
+				ItemDes.text = PlayerPrefs.GetString ("LoreScroll2Des");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Necrotic Seal")
+				ItemDes.text = PlayerPrefs.GetString ("NecroticDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Scrap Note - Part 7")
+				ItemDes.text = PlayerPrefs.GetString ("ScrapNoteDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Secret Key")
+				ItemDes.text = PlayerPrefs.GetString ("SecretKeyDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "teabag")
+				ItemDes.text = PlayerPrefs.GetString ("TeabagDes");
+			if (transform.GetChild (0).GetComponentInChildren<Image> ().sprite.name == "Witch Seal")
+				ItemDes.text = PlayerPrefs.GetString ("WitchDes");
 
 			Sprite itemSprite = transform.GetChild (0).GetComponentInChildren<Image> ().sprite;
 			itemImage.sprite = itemSprite;
 		}
+
 		if (transform.parent.gameObject.name == "SpellContent") {
-			ItemDes = GameObject.Find ("SpellDescription").GetComponent<Text> ();
 
 			Sprite itemSprite = transform.GetChild (0).GetComponentInChildren<Image> ().sprite;
 			itemImage.sprite = itemSprite;
