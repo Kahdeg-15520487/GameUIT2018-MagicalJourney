@@ -92,6 +92,7 @@ StyleCopReport.xml
 
 # visual studio project file
 *.csproj
+*.sln
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
